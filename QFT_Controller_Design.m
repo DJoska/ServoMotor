@@ -2,16 +2,15 @@ s = tf('s');
 P = s*zeros(1,1,6);
 A = [25.34 28.7 19.26 29.96 4.353 7.76];
 T = [10.4 9.6 1.9 1.65 0.09 0.14];
-Ay = A(1);
-Tau = T(1);
+Ay = A(6);
+Tau = T(6);
 
 tfs = s*zeros(1,1,6);
-Gf = tf([1.2 6.3], 1);
 G2 = (s/8.66+1)*1.2/s;
 % Generate set of first order velocity plants Pv
 for i = (1:1:6)
     P(1,1,i) = tf(A(i),[1 T(i)]);
-    tfs(1,1,i) = ((G2*P(1,1,i)))/(1+G2*P(1,1,i))*1/s*1/30;
+    tfs(1,1,i) = ((G2*P(1,1,i)))/(1+G2*P(1,1,i))*1/s;
 end
 tf2 = tfs(1,1,3);
 % Choose discrete values at which to consider sensitivity
@@ -33,4 +32,4 @@ ubnd = sectbnds(bnd);
 G = tf(1,1); %G(w)
 Gout = 1;
 % *(1-s*0.07053/2)
-lpshape(W,ubnd,tfs(1,1,5),G) % CAD tool for loop-shaping
+% lpshape(W,ubnd,tfs(1,1,5),G) % CAD tool for loop-shaping
