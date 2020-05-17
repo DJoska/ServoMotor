@@ -1,0 +1,6 @@
+#Files Ignore
+QFT_Controller_Design.asv
+QFTmodel.slxc
+
+#Directories Ignore
+slprj/
