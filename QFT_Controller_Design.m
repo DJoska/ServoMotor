@@ -33,4 +33,4 @@ ubnd = sectbnds(bnd);
 G = tf(1,1); %G(w)
 Gout = 1;
 % *(1-s*0.07053/2)
-lpshape(W,ubnd,tfs(1,1,1),Gout) % CAD tool for loop-shaping
+lpshape(W,ubnd,tfs(1,1,5),G) % CAD tool for loop-shaping
