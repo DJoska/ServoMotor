@@ -31,6 +31,6 @@ bnd=grpbnds(b1,b2); % group the bounds for use in lpshape
 ubnd = sectbnds(bnd);
 % plotbnds(bnd);
 G = tf(1,1); %G(w)
-Gout = 90*(s/2.8+1);
+Gout = 1;
 % *(1-s*0.07053/2)
-lpshape(W,ubnd,tfs(1,1,1),G) % CAD tool for loop-shaping
+lpshape(W,ubnd,tfs(1,1,1),Gout) % CAD tool for loop-shaping
